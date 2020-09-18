@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpClientModule } from "@angular/common/http";
+import { TalkWithDbService } from "./talk-with-db.service";
 
 
 @NgModule({
@@ -19,10 +21,11 @@ import { MatDialog } from '@angular/material/dialog';
     ReactiveFormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   entryComponents: [LoginComponent],
   providers: [
-   
+   TalkWithDbService
   ],
   bootstrap: [AppComponent],
 })

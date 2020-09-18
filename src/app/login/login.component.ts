@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { FormGroup,FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +7,21 @@ import { FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  signInForm: FormGroup;
+  form: FormGroup;
+  // Regex
+  passwordPattern = '\W';
+  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
   constructor() {}
 
-  ngOnInit(): void {}
-  onSubmit() {}
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      email: new FormControl('', Validators.pattern(this.emailPattern)),
+      password: new FormControl('', Validators.pattern(this.passwordPattern)),
+    });
+  }
+
+ 
+  
+
+  onSubmit(form) {}
 }

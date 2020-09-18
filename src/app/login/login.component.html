@@ -1,5 +1,101 @@
-<h1 mat-dialog-title>Login</h1>
-<mat-dialog-actions>
-    
+<div style="padding: 0px;">
+  <h1 mat-dialog-title style="text-align: center" class="font-weight-bold">
+    Login
+  </h1>
+  <div style="background-color: lightblue; padding: 50px">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <!-- Email address  -->
+      <div class="form-group m-5">
+        <div class="row">
+          <div class="col-3">
+            <h4
+              class="text-dark mt-1"
+              style="
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                  sans-serif;
+              "
+            >
+              <i class="fas fa-envelope"></i> Email address<span
+                style="color: green"
+                >*</span
+              >
+            </h4>
+          </div>
+          <div class="col-9">
+            <input
+              class="form-control"
+              type="text"
+              name="email"
+              placeholder="example@email.com"
+              formControlName="email"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-3">
+            <div *ngIf="form.get('email').errors?.pattern" class="error">
+              Email is invalid!
+            </div>
+          </div>
+        </div>
+      </div>
 
-</mat-dialog-actions>
+      <!-- Password -->
+      <div class="form-group m-5">
+        <div class="row">
+          <div class="col-3">
+            <h4
+              class="text-dark mt-1"
+              style="
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+                  sans-serif;
+              "
+            >
+              <i class="fa fa-key" aria-hidden="true"></i> Password<span
+                style="color: green"
+                >*</span
+              >
+            </h4>
+          </div>
+          <div class="col-9">
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              placeholder="Password"
+              formControlName="password"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col offset-3">
+            <div *ngIf="form.get('password').errors?.pattern" class="error">
+              Password must contain at least one Lowercase, Uppercase, number
+              and alphanumeric character
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summit button -->
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-12 text-center">
+            <input
+              class="btn btn-primary"
+              type="button"
+              value="Login"
+              [disabled]="!form.valid"
+              (click)="onSubmit(form)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Form end -->
+    </form>
+  </div>
+</div>

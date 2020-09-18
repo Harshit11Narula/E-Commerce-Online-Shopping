@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eShopping';
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog) {}
   openLogin() {
-    this.dialog.open(LoginComponent);
+    this.dialog.open(LoginComponent, {
+      height: '500px',
+      width: '800px',
+      backdropClass: 'backdropBackground',
+    });
   }
 }
