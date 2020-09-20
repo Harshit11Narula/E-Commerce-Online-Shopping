@@ -1,0 +1,66 @@
+<div *ngIf="data.length == 0; then content1; else content2"></div>
+<ng-template #content1>
+  <div style="text-align: center" class="display-4 font-weight-bolder m-4">
+    Sorry! No item in the Cart
+  </div>
+  <div class="m-5" style="text-align: center">
+    <button class="btn btn-primary" style="width: 70%" (click)="shop()">
+      Shop
+    </button>
+  </div>
+</ng-template>
+<ng-template #content2>
+  <div *ngFor="let obj of data" class="my-3">
+    <div
+      class="p-2"
+      style="border-radius: 2px; box-shadow: 0.5px 0.5px 0.5px 0.5px black"
+    >
+      <div class="row">
+        <div class="col offset-1">
+          <img
+            style="width: 20%;height: 200px;"
+            class="img-fluid rounded-0"
+            [src]="'./assets/productImages/' + obj.picId + '1.jpg'"
+          />
+        </div>
+        <div class="col">
+            <div style="text-align: center;">obj.productName</div>
+            <div class="row">
+                <div class="col">Quantity: obj.quantity</div>
+                <div class="col">obj.productId</div>
+            </div>
+            <div class="row">
+                <div class="col" (click)="remove()"></div>
+                <div class="col" (click)="edit()">Edit</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="p-2"
+    style="border-radius: 2px; box-shadow: 0.5px 0.5px 0.5px 0.5px black"
+  >
+    <div
+      class="font-weight-bolder"
+      style="
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      "
+    >
+      Order Summary
+    </div>
+    <div class="row m-4">
+      <div class="col">Item(s): {{ sz }}</div>
+      <div class="col">Ship To: India</div>
+      <div class="col">VAT(5%): AM 71</div>
+      <div class="col">Grand Total: {{ totalCost }}</div>
+    </div>
+    <div style="text-align: center">
+      <button class="btn btn-primary" style="width: 70%">
+        <i class="fa fa-lock" aria-hidden="true"></i> Secure Payment
+      </button>
+    </div>
+  </div>
+</ng-template>

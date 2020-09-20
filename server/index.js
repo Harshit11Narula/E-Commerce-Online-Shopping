@@ -1,5 +1,4 @@
-const express = require("express"
-);
+const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -8,12 +7,22 @@ const PORT = 3000;
 const app = express();
 
 const productsRoute = require("./routes/productsRoute");
+const pageRoute = require("./routes/pageRoute");
+const cart = require('./routes/cartRoute');
+const findCart = require('./routes/findCartRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/api/products", productsRoute);
+
+app.use("/api/page", pageRoute);
+
+app.use("/api/cart", cart);
+
+app.use("/api/findCart", findCart);
+
 app.listen(PORT, (err) => {
   if (!err) {
     console.log(`Server is running at port: ${PORT}`);

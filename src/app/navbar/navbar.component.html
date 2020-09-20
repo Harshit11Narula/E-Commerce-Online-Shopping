@@ -1,0 +1,141 @@
+
+  <nav
+    class="navbar navbar-expand-lg w-100 navbar"
+    style="background-color: rgb(179, 138, 138)"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <div style="margin-top: -35px" class="d-flex">
+          <i
+            class="fas fa-shopping-cart"
+            style="font-size: 40px; margin: 20px"
+          ></i>
+          <h1 style="margin-top: 25px">E-Shopping</h1>
+        </div>
+      </a>
+      <div class="d-flex">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Search Product and brand"
+          style="width: 500px; margin-right: 1px"
+        />
+        <button
+          class="btn button-outline-light border-black bg-dark"
+          style="box-shadow: 1px 1px 1px 1px aqua; color: white"
+          type="submit"
+        >
+          <span class="glyphicon glyphicon-search"></span> Search
+        </button>
+      </div>
+      <div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#toggle"
+          aria-controls="my_toggle_nav"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mr4" id="toggle">
+          <ul class="navbar-nav">
+            <li class="nav-item active" style="margin: 10px">
+              <a routerLink="/" class="nav-item nav-link active"
+                ><span class="glyphicon glyphicon-home"></span> Home</a
+              >
+            </li>
+            <li class="nav-item active" style="margin: 10px">
+              <a href="./home.html" class="nav-item nav-link active">
+                <div class="d-flex">
+                  <div>
+                    <i class="material-icons" style="font-size: 20px">people</i>
+                  </div>
+                  <div class="" style="margin-left: 3px">About Us</div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item active" style="margin: 10px">
+              <a href="./home.html" class="nav-item nav-link active">
+                <div class="d-flex">
+                  <div>
+                    <i class="material-icons" style="font-size: 20px">email</i>
+                  </div>
+                  <div class="" style="margin-left: 3px">Contact Us</div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item" style="margin: 10px">
+              <a href="./post_form.html" class="nav-item nav-link active">
+                <div class="d-flex">
+                  <div>
+                    <i class="fas fa-shopping-cart"></i>
+                  </div>
+                  <div class="" style="margin-left: 3px">Cart</div>
+                </div>
+              </a>
+            </li>
+
+            <li class="nav-item" style="margin: 10px">
+              <div class="dropdown mr3">
+                <a
+                  class="nav-item nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  id="sign"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  href="#"
+                  style="margin: 10px"
+                >
+                  <i class="fas fa-sign-in-alt"></i> Sign In
+                </a>
+
+                <div
+                  class="dropdown-menu link"
+                  aria-labelledby="sign"
+                  style="
+                    background-color: aqua;
+                    color: blue;
+                    margin-left: -130px;
+                    margin-top: 30px;
+                    width: 250px;
+                  "
+                >
+                  <a class="dropdown-item link" style="color: black" href="#">
+                    <i class="fas fa-user"></i> Your Account</a
+                  >
+                  <a class="dropdown-item link" style="color: black" href="#"
+                    ><i class="fas fa-box-open"></i> Your Orders</a
+                  >
+                  <hr />
+                  <p style="text-align: center; margin-top: -10px">
+                    If you are new User
+                  </p>
+                  <a
+                    class="dropdown-item link"
+                    style="text-align: center; margin-top: -10px"
+                    href="#"
+                    >Register</a
+                  >
+                  <div style="text-align: center">
+                    <button
+                      class="btn btn-warning"
+                      style="width: 150px; margin-top: 10px"
+                      mat-raised-button
+                      (click)="openLogin()"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- Close of Nav bar-->
+<app-home></app-home>

@@ -11,10 +11,16 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClientModule } from "@angular/common/http";
 import { TalkWithDbService } from "./talk-with-db.service";
+import { ProductDisplayComponent } from './product-display/product-display.component';
+import { RecommendComponent } from './recommend/recommend.component';
+import { CategoryComponent } from './category/category.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { CartViewComponent } from './cart-view/cart-view.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent],
+  declarations: [AppComponent,ProductDisplayComponent, LoginComponent, HomeComponent, RecommendComponent, CategoryComponent, ProductPageComponent, CartViewComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +29,7 @@ import { TalkWithDbService } from "./talk-with-db.service";
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [LoginComponent, ProductDisplayComponent],
   providers: [
    TalkWithDbService
   ],

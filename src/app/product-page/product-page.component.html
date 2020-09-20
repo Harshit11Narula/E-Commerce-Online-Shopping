@@ -1,0 +1,118 @@
+<div class="pb-5">
+  <div style="border-radius: 2px; box-shadow: 0.5px 0.5px 0.5px 0.5px black">
+    <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel1" data-slide-to="0" class=""></li>
+        <li data-target="#myCarousel1" data-slide-to="1" class="active"></li>
+        <li data-target="#myCarousel1" data-slide-to="2" class=""></li>
+      </ol>
+      <!-- Wrapper for carousel items -->
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <div style="text-align: center">
+            <img
+              [src]="'./assets/productImages/' + obj[0].picId + '1.jpg'"
+              height="400px"
+            />
+          </div>
+        </div>
+        <div class="carousel-item active">
+          <div style="text-align: center">
+            <img
+              [src]="'./assets/productImages/' + obj[0].picId + '2.jpg'"
+              height="400px"
+            />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="text-align: center">
+            <img
+              [src]="'./assets/productImages/' + obj[0].picId + '3.jpg'"
+              height="400px"
+            />
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel1" data-slide="prev">
+        <i class="fa fa-angle-left fa-3x" style="color: black"></i>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel1" data-slide="next">
+        <i class="fa fa-angle-right fa-3x" style="color: black"></i>
+      </a>
+    </div>
+    <div
+      class="font-weight-bold my-4"
+      style="text-align: center; font-size: 20px"
+    >
+      {{ obj[0].productName }}
+    </div>
+    <div style="font-size: 15px" class="justify-content-between d-flex">
+      <div class="font-weight-bold" style="margin-left: 50px">
+        {{ obj[0].productId }}
+      </div>
+      <div class="font-weight-bold" style="color: red; margin-right: 50px">
+        <u> In Stock</u>
+      </div>
+    </div>
+  </div>
+  <div style="border-radius: 2px; box-shadow: 0.5px 0.5px 0.5px 0.5px black">
+    <div class="row">
+      <div
+        class="col my-auto offset-1 font-weight-bold"
+        style="font-size: 30px"
+      >
+        Brand:
+        <strong
+          style="
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
+              serif;
+          "
+          >{{ obj[0].brand }}</strong
+        >
+      </div>
+      <div class="col mx-5">
+        <div class="my-4">
+          <select class="form-control" id="sel1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div style="width: 100%">
+          <button
+            class="btn btn-primary mb-4 mx-auto"
+            style="text-align: center; width: 100%"
+            (click)="addon(obj[0])"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="p-1"
+    style="border-radius: 2px; box-shadow: 0.5px 0.5px 0.5px 0.5px black"
+  >
+    <div class="m-5">
+      <button id="overview" (click)="overview()" class="btn m-3">
+        OverView
+      </button>
+      <button id="specifications" (click)="specifications()" class="btn m-3">
+        Specifications
+      </button>
+    </div>
+    <div class="m-5 font-weight-bold" style="font-size: 20px" id="data">
+      <div id = "overviewData">
+        <strong class="font-weight-bold">Product Details: </strong> <strong style=" font-style: italic; color: darkslategrey;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{obj[0].productDetails}}</strong>
+      </div>
+      <div id="specificData">
+        <ul class="list-group" style="color: gray;"  *ngFor="let specific of obj[0].specifications">
+          <li class="list-group-item"> <i class="fa fa-check" aria-hidden="true"></i> {{specific}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

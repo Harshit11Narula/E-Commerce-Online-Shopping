@@ -1,6 +1,10 @@
+import { ProductDisplayComponent } from './../product-display/product-display.component';
 import { TalkWithDbService } from './../talk-with-db.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +13,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   form: FormGroup;
-  data = null;
-  constructor(public talkWithDbService:TalkWithDbService) {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.talkWithDbService.filterProduct({ "tag": "shirt" })
-      .subscribe((data) => {
-        console.log(data);
-        this.data = data;
-      }, (err) => { 
-          console.log(err);
-      })
-
-  }
+  }  
 }
